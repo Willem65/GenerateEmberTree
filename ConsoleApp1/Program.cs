@@ -144,8 +144,6 @@ namespace EmberMinimal
                 ////}
 
 
-
-
                 //if (child is IParameter parameter)
                 //{
                 //    Console.WriteLine($" Type: {parameter.Value?.GetType().Name}");
