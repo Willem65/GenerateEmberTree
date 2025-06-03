@@ -106,53 +106,272 @@ namespace EmberMinimal
         //    }
         //}
 
-        public static int teller = 0;
+        //////////public static int teller = 0;
 
-        private static void WriteChildren(INode node)
-        {
-            for (int i = 0; i < node.Children.Count; i++)
-            {
-                var child = node.Children[i];
-                teller++;
+        //////////private static void WriteChildren(INode node)
+        //////////{
+        //////////    for (int i = 0; i < node.Children.Count; i++)
+        //////////    {
+        //////////        var child = node.Children[i];
+        //////////        teller++;
 
+        //////////        if (child is INode childNode)
+        //////////        {
+        //////////            //if (teller > 449 && teller < 461)
+        //////////         //   if (teller == 473 || teller == 476 || teller == 383 || teller == 382 || teller == 1)                    
+        //////////            {
+        //////////               // Console.WriteLine("                      " + teller + "  " + childNode.Identifier + "  " + childNode.GetPath());
+        //////////                Console.WriteLine("                      " + childNode.GetPath());
+        //////////            }
 
+        //////////            WriteChildren(childNode);    // Recursive opnieuw aanroepen van de zelfde functie                                                 // net zo lang tot er geen kinderen meer zijn               
+        //////////        }
+        //////////        else if (child is IParameter childParameter)
+        //////////        {
+        //////////            //if (teller == 474 || teller == 476 || teller == 383 || teller == 382 || teller == 1)
+        //////////            //if (teller > 449 && teller < 481)
+        //////////            // if (teller == 476)
+        //////////            {
+        //////////                //Console.WriteLine("                                              " + teller + "  " + childParameter.Identifier + "  " + childParameter.Number);
+        //////////                //Console.WriteLine("                                                                                      " + teller + "  " + childParameter.Value?.GetType().Name);
 
-
-
-                
-
-
-                if (child is INode childNode)
-                {
-                    //if (teller > 449 && teller < 461)
-                 //   if (teller == 473 || teller == 476 || teller == 383 || teller == 382 || teller == 1)                    
-                    {
-                        Console.WriteLine("                      " + teller + "  " + childNode.Identifier + "  " + childNode.GetPath());
-                    }
-
-                    WriteChildren(childNode);    // Recursive opnieuw aanroepen van de zelfde functie                                                 // net zo lang tot er geen kinderen meer zijn               
-                }
-                ////else if (child is IParameter childParameter)
-                ////{
-                ////    //if (teller == 474 || teller == 476 || teller == 383 || teller == 382 || teller == 1)
-                ////    //if (teller > 449 && teller < 481)
-                ////   // if (teller == 476)
-                ////    {
-                ////        Console.WriteLine("                                              " + teller + "  " + childParameter.Identifier + "  " + childParameter.Number);
-                ////        Console.WriteLine("                                                                                      " + teller + "  " + childParameter.Value?.GetType().Name);
-                ////    }
-                ////}
-
-
-                //if (child is IParameter parameter)
-                //{
-                //    Console.WriteLine($" Type: {parameter.Value?.GetType().Name}");
-                //}
+        //////////                Console.WriteLine("                                              " + childParameter.Identifier);
+        //////////                Console.WriteLine("                                                                                      " +childParameter.Value?.GetType().Name);
+        //////////            }
+        //////////        }
+        //////////    }
+        //////////}
+        /// <summary>
+        /// 
 
 
 
-            }
-        }
+
+
+        //private static Dictionary<string, List<string>> classDefinitions = new Dictionary<string, List<string>>();
+
+        //public static void WriteChildren(INode node)
+        //{
+        //    for (int i = 0; i < node.Children.Count; i++)
+        //    {
+        //        var child = node.Children[i];
+
+        //        if (child is INode childNode)
+        //        {
+        //            string className = childNode.Identifier;
+
+        //            if (!classDefinitions.ContainsKey(className))
+        //            {
+        //                classDefinitions[className] = new List<string>();
+        //            }
+
+        //            WriteChildren(childNode);
+        //        }
+        //        else if (child is IParameter childParameter)
+        //        {
+        //            string parentClass = node.Identifier;
+        //            string propertyName = childParameter.Identifier;
+        //            string propertyType = childParameter.Value?.GetType().Name ?? "object";
+
+        //            if (!classDefinitions.ContainsKey(parentClass))
+        //            {
+        //                classDefinitions[parentClass] = new List<string>();
+        //            }
+
+        //            classDefinitions[parentClass].Add($"   [Element(Identifier = \"{propertyName}\")]");
+        //            classDefinitions[parentClass].Add($"   internal {propertyType} {propertyName} {{ get; private set; }}");
+        //        }
+        //    }
+        //}
+
+        //public static void DisplayClasses()
+        //{
+        //    Console.WriteLine("public partial class GetSet");
+        //    Console.WriteLine("{");
+
+        //    foreach (var classDef in classDefinitions)
+        //    {
+        //        Console.WriteLine($"   //---------------------------------------------------------------------");
+        //        Console.WriteLine($"   // {classDef.Key} class");
+        //        Console.WriteLine($"   //---------------------------------------------------------------------");
+        //        Console.WriteLine($"   public sealed class {classDef.Key} : FieldNode<{classDef.Key}>");
+        //        Console.WriteLine("   {");
+
+        //        foreach (var property in classDef.Value)
+        //        {
+        //            Console.WriteLine($"       {property}");
+        //        }
+
+        //        Console.WriteLine("   }");
+        //        Console.WriteLine();
+        //    }
+
+        //    Console.WriteLine("}");
+        //}
+
+
+
+
+
+
+
+        //public static int stop, teller = 0;
+
+        //private static Dictionary<string, string> parentChildMapping = new Dictionary<string, string>();
+        //private static Dictionary<string, List<string>> classDefinitions = new Dictionary<string, List<string>>();
+
+        //public static void WriteChildren(INode node)
+        //{
+        //    stop++;
+        //    //if (stop > 18) return;
+
+        //    string parentClass = node.Identifier;
+
+        //    if (!classDefinitions.ContainsKey(parentClass))
+        //    {
+        //        classDefinitions[parentClass] = new List<string>();
+        //    }
+
+        //    for (int i = 0; i < node.Children.Count; i++)
+        //    {
+        //        var child = node.Children[i];
+
+        //        if (child is INode childNode)
+        //        {
+        //            string childClass = childNode.Identifier;
+        //            parentChildMapping[parentClass] = childClass; // Ensuring hierarchy
+
+
+        //            if (childClass != string.Empty)
+        //            {
+        //                classDefinitions[parentClass].Add($"   internal {childClass.Remove(childClass.Length - 2)}{teller} {childClass.ToLower()} {{ get; private set; }}");
+
+        //            }
+
+        //            WriteChildren(childNode);
+
+        //        }
+        //        //else if (child is IParameter childParameter)
+        //        //{
+        //        //    string propertyName = childParameter.Identifier;
+        //        //    string propertyType = childParameter.Value?.GetType().Name ?? "object";
+
+        //        //    classDefinitions[parentClass].Add($"   [Element(Identifier = \"{propertyName}\")]");
+        //        //    classDefinitions[parentClass].Add($"   internal {propertyType} {propertyName} {{ get; private set; }}");
+
+        //        //}
+
+        //    }
+
+        //}
+
+        //public static void DisplayClasses()
+        //{
+        //    //Console.WriteLine("public partial class GetSet");
+
+        //    Console.WriteLine($"   public sealed class AuronRoot : Root<AuronRoot>");
+        //    //Console.WriteLine("   {");
+
+        //    //Console.WriteLine($"         internal auron auron {{get; private set; }}");
+        //    //Console.WriteLine("   }");
+
+
+        //    // Console.WriteLine("{");
+
+        //    foreach (var classDef in classDefinitions)
+        //    {
+
+        //        //Console.WriteLine($"   //---------------------------------------------------------------------");
+        //        //Console.WriteLine($"   // {classDef.Key} class");
+        //        //Console.WriteLine($"   //---------------------------------------------------------------------");
+        //        if (classDef.Key != string.Empty)
+        //        {
+        //            Console.WriteLine($"   public sealed class {classDef.Key.Remove(classDef.Key.Length - 2)}{teller} : FieldNode<{classDef.Key.Remove(classDef.Key.Length - 2)}{teller}>");
+
+        //        }
+        //        Console.WriteLine("   {");
+
+        //        foreach (var property in classDef.Value)
+        //        {
+        //            Console.WriteLine($"       {property}");
+
+        //        }
+
+
+
+        //        Console.WriteLine("   }");
+        //        Console.WriteLine();
+        //    }
+
+        //    //Console.WriteLine("}");
+
+        //}
+
+
+
+
+
+
+
+        //private static Dictionary<string, List<string>> classDefinitions = new Dictionary<string, List<string>>();
+        //// public static void WriteChildren(INode node, int depth)
+        //public static void WriteChildren(INode node)
+        //{
+        //    for (int i = 0; i < node.Children.Count; i++)
+        //    {
+        //        var child = node.Children[i];
+
+        //        if (child is INode childNode)
+        //        {
+        //            string className = childNode.Identifier;
+
+        //            if (!classDefinitions.ContainsKey(className))
+        //            {
+        //                classDefinitions[className] = new List<string>();
+        //            }
+
+        //            WriteChildren(childNode);
+        //        }
+        //        else if (child is IParameter childParameter)
+        //        {
+        //            string parentClass = node.Identifier;
+        //            string propertyName = childParameter.Identifier;
+        //            string propertyType = childParameter.Value?.GetType().Name ?? "object";
+
+        //            if (!classDefinitions.ContainsKey(parentClass))
+        //            {
+        //                classDefinitions[parentClass] = new List<string>();
+        //            }
+
+        //            classDefinitions[parentClass].Add($"public {propertyType} {propertyName} {{ get; private set; }}");
+        //        }
+        //    }
+        //}
+
+        //public static void GenerateClassFile(string fileName)
+        //{
+        //    StringBuilder sb = new StringBuilder();
+
+        //    foreach (var classDef in classDefinitions)
+        //    {
+        //        sb.AppendLine($"public class {classDef.Key}");
+        //        sb.AppendLine("{");
+
+        //        foreach (var property in classDef.Value)
+        //        {
+        //            sb.AppendLine($"    {property}");
+        //        }
+
+        //        sb.AppendLine("}");
+        //        sb.AppendLine();
+        //    }
+
+        //    File.WriteAllText(fileName, sb.ToString());
+        //    Console.WriteLine($"Class file '{fileName}' generated successfully!");
+        //}
+
+
+
 
 
 
@@ -190,38 +409,144 @@ namespace EmberMinimal
 
 
 
-        private static StringBuilder classBuilder = new StringBuilder(100000);
-
-        //StringBuilder classBuilder = new StringBuilder(100000);
 
 
 
-        public static void GenerateClass(string className, Dictionary<string, string> properties)
+
+
+
+        public static int stop, teller = 0;
+        private static HashSet<string> uniqueClasses = new HashSet<string>(); // Ensure class names are unique
+        private static Dictionary<string, HashSet<string>> classDefinitions = new Dictionary<string, HashSet<string>>();
+        private static HashSet<string> existingDefinitions = new HashSet<string>(); // Prevent repeated class entries
+
+        public static void WriteChildren(INode node)
         {
+            string parentClass = node.Identifier;
 
-            //classBuilder.AppendLine("using System;");
-            //classBuilder.AppendLine($"public class {className}");
-            //classBuilder.AppendLine("{");
+            stop++;
+            //if (stop > 8) return;
 
-            //for (int i = 0; i < properties.Count(); i++)
-            //{
-            //    var property = properties.ElementAt(i);
-            //    classBuilder.AppendLine($"   Key: {property.Key}, Value: {property.Value} {{ get; set; }}");
-            //}
+            if (!classDefinitions.ContainsKey(parentClass))
+            {
+                classDefinitions[parentClass] = new HashSet<string>(); // HashSet prevents duplicate properties
+            }
 
-            //classBuilder.AppendLine("}");
+            for (int i = 0; i < node.Children.Count; i++)
+                {
+                var child = node.Children[i];
 
+                if (child is INode childNode)
+                {
+                    string childClass = childNode.Identifier;
 
-            //File.WriteAllText($"{className}.cs", classBuilder.ToString());       // Write the class to a file
+                   // if (!uniqueClasses.Contains(childClass) && !existingDefinitions.Contains(childClass)) // Prevent duplicates
+                    {
+                        uniqueClasses.Add(childClass);
+                        existingDefinitions.Add(childClass); // Track defined classes
 
+                        //classDefinitions[parentClass].Add($"   internal {childClass} {childClass.ToLower()} {{ get; private set; }}");
+                        classDefinitions[parentClass].Add($"   internal {childClass} {childClass} {{ get; private set; }}");
+                    }
 
-            //for (int i = 0; i < properties.Count; i++)
-            //{
-            //    var property = properties.ElementAt(i);
-            //    Console.WriteLine($"Key: {property.Key}, Value: {property.Value}");
-            //}
+                    WriteChildren(childNode);
+                }
+                else if (child is IParameter childParameter)
+                {
+                    string propertyName = childParameter.Identifier;
+                    string propertyType = childParameter.Value?.GetType().Name ?? "object";
 
+                    if(propertyType is "Int64")
+                    {
+                        propertyType = "IntegerParameter";
+                    }
+                    if (propertyType is "Boolean")
+                    {
+                        propertyType = "BooleanParameter";
+                    }
+                    if (propertyType is "Double")
+                    {
+                        propertyType = "RealParameter";
+                    }
+                    if (propertyType is "String")
+                    {
+                        propertyType = "StringParameter";
+                    }
+
+                    string propertyEntry = $"   [Element(Identifier = \"{propertyName}\")]\n          internal {propertyType} {propertyName} {{ get; private set; }}";
+
+                    if (!classDefinitions[parentClass].Contains(propertyEntry) && !existingDefinitions.Contains(propertyName))
+                    {
+                        classDefinitions[parentClass].Add(propertyEntry);
+                        //existingDefinitions.Add(propertyName); // Track property definitions to prevent re-addition
+                    }
+                }
+            }
         }
+
+        public static void DisplayClasses()
+        {
+            Console.WriteLine($"   public sealed class AuronRoot : Root<AuronRoot>");
+            Console.WriteLine("   {");
+            Console.WriteLine($"       internal auron auron {{ get; private set; }}");
+            Console.WriteLine("   }");
+
+            foreach (var classDef in classDefinitions)
+            {
+                if (!uniqueClasses.Contains(classDef.Key)) continue; // Avoid duplicate class generation
+
+                //Console.WriteLine($"   //---------------------------------------------------------------------");
+                //Console.WriteLine($"   // {classDef.Key} class");
+                //Console.WriteLine($"   //---------------------------------------------------------------------");
+                Console.WriteLine($"   public sealed class {classDef.Key} : FieldNode<{classDef.Key}>");
+                Console.WriteLine("   {");
+
+                foreach (var property in classDef.Value)
+                {
+                    Console.WriteLine($"       {property}");
+                }
+
+                Console.WriteLine("   }");
+                Console.WriteLine();
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+        //public static void GenerateClass(string className, Dictionary<string, string> properties)
+        //{
+
+        //    //classBuilder.AppendLine("using System;");
+        //    //classBuilder.AppendLine($"public class {className}");
+        //    //classBuilder.AppendLine("{");
+
+        //    //for (int i = 0; i < properties.Count(); i++)
+        //    //{
+        //    //    var property = properties.ElementAt(i);
+        //    //    classBuilder.AppendLine($"   Key: {property.Key}, Value: {property.Value} {{ get; set; }}");
+        //    //}
+
+        //    //classBuilder.AppendLine("}");
+
+
+        //    //File.WriteAllText($"{className}.cs", classBuilder.ToString());       // Write the class to a file
+
+
+        //    //for (int i = 0; i < properties.Count; i++)
+        //    //{
+        //    //    var property = properties.ElementAt(i);
+        //    //    Console.WriteLine($"Key: {property.Key}, Value: {property.Value}");
+        //    //}
+
+        //}
 
 
         private static void Main()
@@ -239,8 +564,9 @@ namespace EmberMinimal
 
                     WriteChildren(consumer.Root);
 
-                   // GenerateClassFile("test.cs");
-
+                    //GenerateClassFile("test.cs");
+                    DisplayClasses();
+                    //GenerateClassFile
                     ////var indent = new string(' ', 2 * 0);
 
                     //////for (int i = 0; i < 1; i++)
@@ -254,7 +580,7 @@ namespace EmberMinimal
                     //////}
                 }
             });
-            Console.WriteLine("\nDone. Press Enter to exit.");
+            //Console.WriteLine("\nDone. Press Enter to exit.");
             Console.ReadLine();
         }
     }
