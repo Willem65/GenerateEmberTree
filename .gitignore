@@ -14,7 +14,7 @@
 *.sln.docstates
 
 # Build results and intermediate files
-[Bb]in/
+#[Bb]in/
 [Oo]bj/
 #[Dd]ebug*/
 [Rr]elease*/
